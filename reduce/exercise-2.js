@@ -20,22 +20,26 @@ the items in stock ('itemsInStock') by the price ('price')
 
 const items = [
   {
-    name: 'Apple',
+    name: "Apple",
     itemsInStock: 10,
     price: 5.99,
   },
   {
-    name: 'Banana',
+    name: "Banana",
     itemsInStock: 5,
     price: 3.99,
   },
   {
-    name: 'Orange',
+    name: "Orange",
     itemsInStock: 2,
     price: 3.99,
   },
 ];
 
-const totalCostOfItems = null; // Replace null and add .reduce code here
+const totalCostOfItems = items.reduce(
+  (currentTotal, { itemsInStock, price }) =>
+    (currentTotal += itemsInStock * price),
+  0
+);
 
 console.log(totalCostOfItems);

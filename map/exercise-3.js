@@ -22,16 +22,23 @@ https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 
 const buttons = [
   {
-    text: 'Button Text 1',
+    text: "Button Text 1",
+    color: "green",
   },
   {
-    text: 'Button Text 2',
+    text: "Button Text 2",
+    color: "blue",
   },
   {
-    text: 'Button Text 3',
+    text: "Button Text 3",
+    color: "red",
   },
 ];
 
-const buttonElements = null; // Replace null and add .map code here
+const divButtons = document.querySelector(".buttons");
+
+const buttonElements = buttons.map(({ text, color }) => {
+  divButtons.innerHTML += `<button style="background-color:${color};">${text}</button>`;
+});
 
 console.log(buttonElements);
